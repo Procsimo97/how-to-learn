@@ -1,21 +1,28 @@
 .page {
   min-width: 1100px;
-  /* мы ещё не умеем делать мобильную версию сайта, */
-  /* поэтому выше установлена минимальная ширина страницы */
   max-width: 1600px;
-  /* выше установили ограничение по максимальной ширине */
   margin: 0 auto;
   /* выше для экранов больше 1600px отцентрировали весь контент */
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
+
+
+/*сделала отдельный класс, чтобы не описывать для каждой ссылки в проекте оформление*/
 .link {
   color: #2f80ed;
   text-decoration: none;
 }
 
+.logo {
+  height: 32px;
+  width: 228px;
+  z-index: 1;
+}
+
+
+
 /*БЛОК HEADER*/
-/*объявляем шапку флекс-контейнером, чтобы позиционировать относительно него все элементы*/
 .header {
   position: relative;
   display: flex;
@@ -24,16 +31,14 @@
   max-height: 756px;
   margin-bottom: 100px;
   background-color: #f2f2f2;
-  /* выше установили ограничения для секции */
+  z-index: -1;
 }
 
 .logo_place_header {
   position: absolute;
-  height: 32px;
-  width: 228px;
-  margin-top: 30px;
-  margin-left: 64px;
-  background-image: url(../images/logo_place_header.svg);
+  top: 30px;
+  left: 64px;
+  background-image: url(../images/logo/logo_place_header.svg);
   background-size: cover;
 }
 
@@ -41,26 +46,25 @@
   align-self: center;
   font-weight: 600;
   font-size: 102px;
-  width: 730px;
+  max-width: 730px;
   margin-left: 64px;
   z-index: 2;
 }
 
  .header__subtitle {
+  margin: 0;
   position: absolute;
   bottom: 30px;
   left: 64px;
-  width: 388px;
+  max-width: 388px;
   line-height: 25px;
-}
-
-.header__subtitle_text {
   font-size: 18px;
   font-weight: normal;
+  z-index: 1;
 }
 
 /*вставка стрелки вправо после ссылки*/
-.link::after {
+.header__link::after {
   content: "\2192";
 }
 
@@ -70,7 +74,7 @@
   right: 0;
   width: 765px;
   height: 608px;
-  z-index: 1;
+  z-index: 0;
 }
 
 .header__square-pic {
@@ -80,12 +84,9 @@
   background-color: #2f80ed;
   height: 568px;
   width: 568px;
-  z-index: 0;
+  z-index: -1;
 }
 
-.logo {
-  z-index: 1;
-}
 
 
 /*БЛОК ОПИСАНИЕ*/
@@ -94,7 +95,6 @@
   justify-content: center;
   min-width: 784px;
   margin-top: 100px;
-  margin-bottom: 100px;
 }
 
 .two-colums {
@@ -106,6 +106,7 @@
 }
 
 .two-colums__brief {
+  margin: 0;
   width: 175px;
   line-height: 1.2;
   font-size: 18px;
@@ -128,21 +129,21 @@
   margin: 0;
 }
 
-.main-text-word {
+.two-columns__span-accent {
   font-weight: 600;
 }
 
 
+
 /*БЛОК СТАТИСТИКИ*/
 .digits {
-  padding: 100px 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 100px auto;
 }
 
-.section__title {
+.section-title {
   text-align: center;
   line-height: 1.15;
   font-size: 60px;
@@ -152,25 +153,27 @@
   margin-top: 0;
 }
 
-.section__subtitle {
-  text-align: center;
+.section-subtitle {
   width: 60%;
+  text-align: center;
   line-height: 34px;
   font-size: 24px;
   font-weight: normal;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: auto 0;
 }
 
 .table {
-  width: 1100px; 
+  width: 1100px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
 .table__cell {
-  padding-top: 60px;
+  margin-top: 60px;
   display: flex;
-  justify-content: space-between;
-  top: 80px;
+  flex-direction: column;
+  width: 250px;
 }
 
 .table__heading {
@@ -178,6 +181,7 @@
   line-height: 1.15;
   font-size: 24px;
   font-weight: 600;
+  margin: 0;
 }
 
 .table__text {
@@ -188,38 +192,35 @@
   margin-bottom: 0;
 }
 
+
 /*БЛОК ФЕЙНМАН*/
 .feynman {
   position: relative;
   display: flex;
-  justify-content: center;
-  padding-top: 100px;
-  height: 890px;
+  flex-direction: column;
+  align-items: center;
+  min-height: 890px;
   background-color: #f2f2f2;
 }
 
-.feynman__column {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  z-index: 1;
-}
-
 .feynman__title {
-  margin-top: 0;
-  width: 648px;
-  height: 240px;
+  max-width: 648px;
   font-size: 120px;
   font-weight: 600;
   line-height: 1.15;
   text-align: center;
+  margin-bottom: 0;
+  z-index: 1;
 }
 
 .feynman__subtitle {
+  margin: 0;
   line-height: 51px;
   font-size: 36px;
   font-weight: normal;
   text-align: center;
+  margin-top: 70px;
+  z-index: 1;
 }
 
 .feynman__image {
@@ -233,57 +234,58 @@
 
 .feynman__link {
   position: absolute;
-  align-self: center;
   right: 48px;
+  top: 50%;
   font-size: 36px;
   font-weight: normal;
   line-height: 51px;
 }
 
+.feynman__link::after {
+  content: "\2192";
+}
+
 
 /*БЛОК КАУФМАН*/
-.section__title_dark  {
+.section-title_theme_dark {
   z-index: 1;
+  color: white;
 }
 
-.section__subtitle_dark {
+.section-subtitle_theme_dark {
   z-index: 1;
+  color: white;
 }
 
-.table_theme_dark {
-  z-index: 1;
-}
-
-.table__cell_dark {
-  padding-top: 80px;
-  z-index: 1;
-}
-
-.table__heading_dark {
+.table__cell_theme_dark {
   width: 200px;
-  z-index: 1;
 }
 
-.table__text_dark {
+.table__heading_theme_dark {
   z-index: 1;
+  color: white;
+}
+
+.table__text_theme_dark {
+  z-index: 1;
+  color: white;
 }
 
 .kaufman {
   position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
   background-color: #1f1f1f;
   padding: 90px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0;
   overflow: hidden;
-  color: white;
 }
 
 .kaufman__triangle {
   position: absolute;
   background-image: url(../images/kaufman-triangle.svg);
+  background-size: cover;
   height: 877px;
   width: 877px;
   top: 0;
@@ -294,6 +296,7 @@
 
 /*БЛОК ПОДВАЛ*/
 .footer {
+  margin: 0;
   padding-top: 60px;
   padding-bottom: 40px;
   display: flex;
@@ -310,46 +313,34 @@
   justify-content: space-between;
 }
 
-.footer__columns_copyright {
+.footer__columns_content_copyright {
   display: flex;
-  flex-direction: column;
   flex-basis: 711px;
+  flex-direction: column;
   justify-content: space-between;
 }
 
-.footer__columns_info {
+.footer__columns_content_info {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
-.footer__column-heading {
-  line-height: 30px;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.footer__columns_social {
+.footer__columns_content_social {
   display: flex;
   flex-direction: column;
-}
-
-.column-links {
-  line-height: 30px;
-  font-size: 18px;
-  font-weight: normal;
-  text-decoration: none;
-  color: white;
+  justify-content: flex-start;
 }
 
 .logo_place_footer {
-  display: flex;
-  background-image: url(../images/logo_place_footer.svg);
+  background-image: url(../images/logo/logo_place_footer.svg);
   height: 32px;
   width: 228px;
   background-size: cover;
 }
 
 .footer__author {
+  margin: 18px 0;
   line-height: 25px;
   font-size: 18px;
   font-weight: normal;
@@ -358,3 +349,32 @@
 .footer__author::before {
   content: "\00A9";
 }
+
+.footer__column-heading {
+  margin: 0;
+  margin-bottom: 20px;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: 600;
+}
+/*в качестве исключения не стала задавать класс.
+ Можно ли список оформить без класса? Через объект*/ 
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__column-links {
+  margin: 0;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: normal;
+  color: white;
+  
+}
+
+.social-icon {
+  height: 16px;
+  width: 16px;
+}*/
