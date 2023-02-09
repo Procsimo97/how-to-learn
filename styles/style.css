@@ -31,7 +31,6 @@
   max-height: 756px;
   margin-bottom: 100px;
   background-color: #f2f2f2;
-  z-index: -1;
 }
 
 .logo_place_header {
@@ -44,6 +43,7 @@
 
 .header__title {
   align-self: center;
+  line-height: 96px;
   font-weight: 600;
   font-size: 102px;
   max-width: 730px;
@@ -60,7 +60,7 @@
   line-height: 25px;
   font-size: 18px;
   font-weight: normal;
-  z-index: 1;
+  z-index: 2;
 }
 
 /*вставка стрелки вправо после ссылки*/
@@ -74,7 +74,9 @@
   right: 0;
   width: 765px;
   height: 608px;
-  z-index: 0;
+  object-fit: contain;
+  object-position: right bottom ;
+  z-index: 1;
 }
 
 .header__square-pic {
@@ -84,7 +86,6 @@
   background-color: #2f80ed;
   height: 568px;
   width: 568px;
-  z-index: -1;
 }
 
 
@@ -97,7 +98,7 @@
   margin-top: 100px;
 }
 
-.two-colums {
+.two-columns {
   display: flex;
   justify-content: space-between;
   width: 80%;
@@ -105,7 +106,7 @@
   padding: 0;  
 }
 
-.two-colums__brief {
+.two-columns__brief {
   margin: 0;
   width: 175px;
   line-height: 1.2;
@@ -114,7 +115,7 @@
   color: #2f80ed;
 }
 
-.two-colums__main-text {
+.two-columns__main-text {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -125,7 +126,7 @@
   gap: 30px;
 }
 
-.two-colums__paragraph {
+.two-columns__paragraph {
   margin: 0;
 }
 
@@ -259,6 +260,7 @@
 
 .table__cell_theme_dark {
   width: 200px;
+  margin-top: 80px;
 }
 
 .table__heading_theme_dark {
@@ -296,39 +298,39 @@
 
 /*БЛОК ПОДВАЛ*/
 .footer {
-  margin: 0;
-  padding-top: 60px;
-  padding-bottom: 40px;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   background-color: #1f1f1f;
   color: white;
-  min-height: 350px;
 }
 
 .footer__columns {
+  min-height: 350px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  box-sizing: border-box;
   width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
-.footer__columns_content_copyright {
+.footer__column {
+  padding: 0;
   display: flex;
-  flex-basis: 711px;
   flex-direction: column;
+}
+
+.footer__column_content_copyright {
+  flex-basis: 711px;
   justify-content: space-between;
 }
 
-.footer__columns_content_info {
-  display: flex;
-  flex-direction: column;
+.footer__column_content_info {
   justify-content: flex-start;
 }
 
-.footer__columns_content_social {
-  display: flex;
-  flex-direction: column;
+.footer__column_content_social {
   justify-content: flex-start;
 }
 
@@ -340,7 +342,8 @@
 }
 
 .footer__author {
-  margin: 18px 0;
+  margin: 0;
+  padding: 18px 0;
   line-height: 25px;
   font-size: 18px;
   font-weight: normal;
@@ -357,24 +360,23 @@
   font-size: 18px;
   font-weight: 600;
 }
-/*в качестве исключения не стала задавать класс.
- Можно ли список оформить без класса? Через объект*/ 
-ul {
+ 
+.footer__column-links {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.footer__column-links {
+.footer__column-link {
   margin: 0;
   line-height: 30px;
   font-size: 18px;
   font-weight: normal;
   color: white;
-  
 }
 
-.social-icon {
+.footer__social-icon {
   height: 16px;
   width: 16px;
+  margin-right: 10px;
 }
