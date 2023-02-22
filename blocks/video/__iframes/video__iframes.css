@@ -1,0 +1,7 @@
+.video__iframes {
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+  height: 316px;
+  box-sizing: border-box;
+}
