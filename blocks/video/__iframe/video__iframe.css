@@ -1,7 +1,12 @@
 .video__iframe {
   padding-top: 50px;
   width: 515px;
+  /*высота необходима для вытеснения выдео за рамки фрейма, чтобы можно было "залезть в другую секцию*/
   height: 316px;
   border-style: none;
   margin-left: 20px;
+}
+
+.video__iframe:first-child {
+  margin-left: 0;
 }

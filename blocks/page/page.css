@@ -4,14 +4,3 @@
   margin: 0 auto;
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
-  
-/*сделала отдельный класс, чтобы не описывать для каждой ссылки в проекте оформление*/
-.link {
-  color: #2f80ed;
-  text-decoration: none;
-}
-
-.link:hover {
-  opacity: .5;
-  transition: .5s;
-}
